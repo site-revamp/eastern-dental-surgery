@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en-SG">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#36784F">
+<title>Eastern Dental Surgery | Jurong East, Bukit Batok & Jurong West</title>
+<meta name="description" content="Family dental care in Jurong East, Bukit Batok and Jurong West. Explore treatments, find your Eastern Dental Surgery clinic and request an appointment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary:#51B477;
+  --primary-dark:#36784F;
+  --primary-light:#CEFCE1;
+  --secondary:#283E31;
+  --secondary-dark:#1B3C28;
+  --secondary-light:#EAF6EE;
+  --accent:#51B477;
+  --heading:#1B3C28;
+  --text:#283E31;
+  --muted:#5B6C61;
+  --background:#FFFFFF;
+  --background-alt:#F5F8F5;
+  --surface:#FFFFFF;
+  --surface-alt:#EAF6EE;
+  --border:#D8E5DC;
+  --border-strong:#6B8571;
+  --interactive:#36784F;
+  --hover:#1B3C28;
+  --focus:#1B3C28;
+  --space:clamp(1.25rem,4vw,4rem);
+  --max:1200px;
+}
+* { box-sizing:border-box }
+html { scroll-behavior:smooth; scroll-padding-top:1.5rem }
+body {
+  margin:0; background:var(--background); color:var(--text);
+  font:400 18px/1.65 "DM Sans",sans-serif;
+}
+img { display:block; max-width:100%; height:auto }
+button,select { font:inherit }
+a { color:var(--interactive); text-underline-offset:5px }
+a:hover { color:var(--hover) }
+button,a,summary,select { -webkit-tap-highlight-color:transparent }
+:focus-visible {
+  outline:3px solid var(--focus); outline-offset:5px;
+}
+h1,h2,h3,h4 {
+  font-family:"Manrope",sans-serif; color:var(--heading);
+  line-height:1.15; letter-spacing:-.045em; margin:0;
+  overflow-wrap:break-word;
+}
+h1 { font-size:clamp(44px,5.8vw,72px); font-weight:700 }
+h2 { font-size:clamp(34px,4vw,48px); font-weight:600 }
+h3 { font-size:clamp(24px,2.5vw,30px); font-weight:600 }
+h4 { font-size:clamp(22px,2vw,24px) }
+p { margin:1rem 0 0 }
+small { font-size:15px }
+button { cursor:pointer }
+.wrap { width:min(var(--max),calc(100% - var(--space)*2)); margin-inline:auto }
+.section { padding-block:clamp(4rem,8vw,7rem) }
+.eyebrow {
+  display:block; font-size:16px; font-weight:600;
+  letter-spacing:.09em; text-transform:uppercase;
+  margin-bottom:1.2rem; color:var(--interactive);
+}
+.lead { font-size:clamp(18px,1.7vw,20px); max-width:57ch }
+.muted { color:var(--muted) }
+.button {
+  display:inline-flex; justify-content:center; align-items:center;
+  gap:.7rem; min-height:52px; padding:.75rem 1.3rem;
+  border:1px solid var(--interactive); border-radius:999px;
+  background:var(--interactive); color:var(--surface);
+  font-size:17px; font-weight:600; text-decoration:none;
+  line-height:1.3; transition:background .2s,transform .2s;
+}
+.button:hover { background:var(--hover); color:var(--surface); transform:translateY(-2px) }
+.button.outline { background:transparent; color:var(--interactive) }
+.button.outline:hover { background:var(--surface-alt) }
+.actions { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:1.7rem }
+.skip {
+  position:absolute; left:1rem; top:-100px; z-index:100;
+  padding:.7rem 1rem; background:var(--surface); color:var(--heading);
+}
+.skip:focus { top:1rem }
+.site-header {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:1.5rem; padding-block:1rem;
+}
+.brand { display:block; flex:none }
+.brand img { width:180px; height:auto }
+nav { display:flex; align-items:center; gap:1.5rem }
+nav a { font-size:16px; font-weight:500; text-decoration:none; padding:.5rem 0 }
+nav .button { font-size:16px; padding:.7rem 1.15rem }
+.mobile-menu { display:none }
+.hero {
+  position:relative; isolation:isolate; background:var(--surface-alt);
+  border-radius:2rem; overflow:hidden;
+}
+.hero-grid { display:grid; grid-template-columns:1.05fr 1fr; align-items:center }
+.hero-copy { padding:clamp(2rem,4vw,4rem); padding-right:1rem; position:relative; z-index:1 }
+.hero h1 em { font-style:normal; color:var(--primary-dark) }
+.hero-copy p { max-width:40ch }
+.hero-photo { position:relative; height:100%; min-height:580px; margin:0 }
+.hero-photo img { width:100%; height:100%; object-fit:cover; object-position:78% center }
+.hero-photo::after {
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(90deg,var(--surface-alt),transparent 28%);
+  pointer-events:none;
+}
+.hero-note {
+  position:absolute; bottom:1.75rem; right:1.75rem; z-index:1;
+  background:var(--surface); padding:1rem 1.2rem; border-radius:1rem;
+  font-size:16px; max-width:230px;
+}
+.hero-note strong { display:block; color:var(--heading); font-family:"Manrope",sans-serif }
+.hero-foot {
+  border-top:1px solid var(--border); padding:1rem 2rem;
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:.7rem;
+  font-size:16px; background:var(--surface-alt);
+}
+.hero-foot b { font-weight:600 }
+.neighbourhoods { display:flex; flex-wrap:wrap; gap:.65rem 1.5rem }
+.neighbourhoods span::before {
+  content:""; display:inline-block; width:8px; height:8px;
+  margin-right:.5rem; background:var(--primary-dark); border-radius:50%;
+}
+.section-heading {
+  display:grid; grid-template-columns:1.1fr .9fr; gap:3rem;
+  align-items:end; margin-bottom:2.5rem;
+}
+.section-heading p { margin:0; max-width:47ch; color:var(--muted) }
+.routes {
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
+  border-block:1px solid var(--border);
+}
+.route {
+  display:flex; align-items:center; gap:1.1rem;
+  min-height:150px; padding:1.5rem;
+  text-decoration:none; color:var(--heading);
+  transition:background .2s;
+}
+.route:nth-child(-n+3) { border-bottom:1px solid var(--border) }
+.route:not(:nth-child(3n)) { border-right:1px solid var(--border) }
+.route:hover { background:var(--surface-alt) }
+.route svg {
+  width:58px; height:58px; flex:none; fill:none;
+  stroke:var(--primary-dark); stroke-width:1.7;
+  stroke-linecap:round; stroke-linejoin:round;
+}
+.route span { font:600 20px/1.3 "Manrope",sans-serif; letter-spacing:-.025em }
+.route small { display:block; margin-top:.5rem; font:400 15px/1.4 "DM Sans",sans-serif; color:var(--muted) }
+.treatment-list { margin-top:2.2rem; display:grid; grid-template-columns:1fr 1fr; gap:0 3rem }
+details { border-bottom:1px solid var(--border); scroll-margin-top:2rem }
+summary {
+  position:relative; cursor:pointer; list-style:none;
+  padding:1.25rem 2rem 1.25rem 0; font-weight:600; font-size:18px;
+}
+summary::-webkit-details-marker { display:none }
+summary::after { content:"+"; position:absolute; right:.2rem; top:1.1rem; font-size:25px; font-weight:400 }
+details[open] summary::after { content:"−" }
+details p { margin:0; padding-bottom:1.2rem; font-size:17px; color:var(--muted) }
+details p a { display:inline-block; margin-top:.6rem }
+.history { background:var(--secondary-dark); color:var(--primary-light); overflow:hidden }
+.history h2,.history h3 { color:var(--surface) }
+.history .eyebrow { color:var(--primary-light) }
+.history-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start }
+.history .lead { color:var(--primary-light) }
+.since {
+  display:block; font-family:"Manrope",sans-serif; font-weight:600;
+  font-size:clamp(92px,13vw,174px); line-height:1; letter-spacing:-.08em;
+  color:var(--primary); margin:2rem 0 1rem;
+}
+.timeline { list-style:none; margin:0; padding:0 }
+.timeline li { display:grid; grid-template-columns:72px 1fr; gap:1.5rem; padding:1.6rem 0; border-bottom:1px solid var(--border-strong) }
+.timeline li:first-child { padding-top:0 }
+.timeline time { color:var(--primary-light); font-size:20px; font-weight:600 }
+.timeline h3 { font-size:24px }
+.timeline p { margin:.6rem 0 0; font-size:17px }
+.history a { color:var(--primary-light) }
+.history :focus-visible { outline-color:var(--primary-light) }
+.clinics { background:var(--background-alt) }
+.clinic-intro { max-width:720px; margin-bottom:2rem }
+.clinic-intro .lead { color:var(--muted) }
+.clinic-picker {
+  display:flex; flex-wrap:wrap; gap:1rem 1.5rem; align-items:center;
+  margin:2rem 0; padding:1.3rem 0; border-block:1px solid var(--border);
+}
+.clinic-picker label { font-size:17px; font-weight:600 }
+select {
+  max-width:100%; min-height:48px; border:1px solid var(--border-strong);
+  border-radius:.6rem; padding:.5rem 2rem .5rem .8rem;
+  color:var(--text); background:var(--surface); font-size:17px;
+}
+.picker-help { font-size:16px; color:var(--muted) }
+.clinic-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.5rem }
+.clinic {
+  padding:2rem 1.6rem; background:var(--surface);
+  border-radius:1rem; border-top:5px solid var(--primary);
+}
+.clinic h3 { font-size:26px }
+.clinic address { font-style:normal; font-size:17px; margin-top:1.2rem; min-height:85px }
+.clinic .phone { font-size:22px; font-weight:600; display:inline-block; margin-top:1rem }
+.hours { font-size:16px; margin:1.3rem 0 0; padding:0; list-style:none }
+.hours li { display:flex; justify-content:space-between; gap:.6rem; margin:.35rem 0 }
+.hours span:last-child { text-align:right }
+.clinic .actions { flex-direction:column; gap:.65rem }
+.clinic .actions a:not(.button) { text-align:center; font-size:16px; padding:.35rem }
+.request-note { margin-top:1.5rem; font-size:16px; color:var(--muted); max-width:85ch }
+.team-grid { display:grid; grid-template-columns:.85fr 1.15fr; gap:5rem }
+.team-copy p { color:var(--muted) }
+.dentists { list-style:none; margin:0; padding:0 }
+.dentists li { display:flex; justify-content:space-between; gap:1rem; padding:1rem 0; border-bottom:1px solid var(--border) }
+.dentists li:first-child { padding-top:0 }
+.dentists span { font-size:16px; color:var(--muted) }
+.visit-strip {
+  padding:2rem; margin-top:3rem; border-radius:1rem;
+  background:var(--surface-alt); display:grid; grid-template-columns:1fr 1fr; gap:2rem;
+}
+.visit-strip h3 { font-size:24px }
+.visit-strip p { font-size:17px }
+.faq { background:var(--background-alt) }
+.faq-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:5rem }
+.faq-grid details p { font-size:18px }
+.final-cta { background:var(--primary-light); padding:clamp(2rem,5vw,4rem); border-radius:2rem; margin-block:4rem }
+.final-cta-inner { display:flex; justify-content:space-between; align-items:center; gap:2rem }
+.final-cta h2 { max-width:15ch }
+.final-cta p { max-width:44ch }
+.final-cta .button { flex:none }
+.site-footer { padding:1rem 0 3rem; font-size:16px }
+.footer-top { display:flex; align-items:start; justify-content:space-between; gap:2rem; padding-bottom:2rem }
+.footer-top img { width:170px }
+.footer-links { display:flex; flex-wrap:wrap; gap:1rem 2rem }
+.footer-bottom { display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding-top:1.2rem; border-top:1px solid var(--border); color:var(--muted) }
+.mobile-bar { display:none }
+@media(min-width:761px) {
+  .hero-copy { animation:arrive .65s ease-out both }
+}
+@keyframes arrive { from { opacity:0; transform:translateY(16px) } to { opacity:1; transform:translateY(0) } }
+@media(max-width:1000px) {
+  nav { gap:1rem }
+  nav .button { display:none }
+  .hero-grid { grid-template-columns:1.05fr .95fr }
+  .hero-photo { min-height:600px }
+  .hero-copy { padding:2rem }
+  .hero-note { right:1rem; bottom:1rem }
+  .route { padding:1.2rem; gap:.7rem }
+  .route span { font-size:18px }
+  .route svg { width:48px; height:48px }
+  .history-grid,.team-grid,.faq-grid { gap:3rem }
+  .clinic-grid { gap:1rem }
+  .clinic { padding:1.5rem 1.1rem }
+  .clinic h3 { font-size:23px }
+  .hours li { display:block; margin:.65rem 0 }
+  .hours span { display:block }
+  .hours span:last-child { text-align:left }
+}
+@media(max-width:760px) {
+  body { font-size:17px; padding-bottom:calc(88px + env(safe-area-inset-bottom)) }
+  .site-header { padding-block:.6rem; flex-wrap:wrap; gap:.5rem }
+  .brand img { width:148px }
+  .mobile-menu {
+    display:inline-flex; min-height:46px; padding:.45rem .8rem;
+    color:var(--interactive); background:var(--surface);
+    border:1px solid var(--border-strong); border-radius:.6rem; font-size:16px;
+  }
+  nav { width:100%; flex-direction:column; align-items:stretch; gap:0; padding-bottom:.6rem }
+  nav a { padding:.65rem .3rem; border-bottom:1px solid var(--border) }
+  nav[hidden] { display:none }
+  .hero { border-radius:1.2rem }
+  .hero-grid { display:flex; flex-direction:column }
+  .hero-copy { width:100%; padding:2rem 1.4rem 1.6rem }
+  .hero h1 { max-width:12ch }
+  .hero-copy .lead { font-size:18px }
+  .hero-copy .actions { gap:.7rem }
+  .hero-copy .button { width:100%; font-size:16px }
+  .hero-photo { min-height:0; height:300px; width:100% }
+  .hero-photo img { object-position:76% center }
+  .hero-photo::after { background:linear-gradient(180deg,var(--surface-alt),transparent 22%) }
+  .hero-note { font-size:15px; padding:.7rem 1rem; bottom:1rem; right:1rem }
+  .hero-foot { padding:1.2rem 1.4rem; font-size:15px }
+  .neighbourhoods { gap:.5rem 1rem }
+  .section-heading,.history-grid,.team-grid,.faq-grid { grid-template-columns:1fr; gap:1.5rem }
+  .section-heading { margin-bottom:2rem }
+  .eyebrow { font-size:15px }
+  .routes { grid-template-columns:repeat(3,minmax(0,1fr)) }
+  .route { flex-direction:column; text-align:center; gap:.65rem; padding:1.2rem .4rem; min-height:145px }
+  .route span { font-family:"DM Sans",sans-serif; font-size:16px; letter-spacing:0 }
+  .route small { display:none }
+  .route svg { width:46px; height:46px }
+  .treatment-list { grid-template-columns:1fr; gap:0 }
+  details p { font-size:16px }
+  summary { font-size:17px }
+  .since { margin-top:1.5rem }
+  .timeline { margin-top:1rem }
+  .timeline li { grid-template-columns:58px 1fr; gap:1rem }
+  .timeline time { font-size:18px }
+  .timeline h3 { font-size:24px }
+  .timeline p { font-size:16px }
+  .clinic-grid { grid-template-columns:1fr; gap:1.2rem }
+  .clinic { padding:1.5rem }
+  .clinic h3 { font-size:26px }
+  .clinic address { min-height:0; font-size:17px }
+  .hours li { display:flex }
+  .hours span:last-child { text-align:right }
+  .clinic-picker { align-items:stretch; gap:.6rem }
+  .clinic-picker label,.clinic-picker select,.picker-help { width:100% }
+  .picker-help { font-size:15px }
+  .dentists li { flex-direction:column; gap:.2rem }
+  .visit-strip { grid-template-columns:1fr; padding:1.5rem; gap:1.5rem }
+  .visit-strip p { font-size:16px }
+  .faq-grid details p { font-size:17px }
+  .final-cta { margin-block:3rem; border-radius:1.2rem; padding:2rem 1.5rem }
+  .final-cta-inner { flex-direction:column; align-items:stretch; gap:1.5rem }
+  .final-cta .button { font-size:16px }
+  .footer-top { flex-direction:column }
+  .footer-links { gap:.7rem 1.3rem }
+  .site-footer { font-size:16px; padding-bottom:1rem }
+  .mobile-bar {
+    position:fixed; bottom:0; left:0; right:0; z-index:20;
+    display:grid; grid-template-columns:1fr 1fr; gap:.7rem;
+    padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom));
+    background:var(--surface); border-top:1px solid var(--border);
+  }
+  .mobile-bar .button { min-height:52px; padding:.65rem .4rem; font-size:16px; border-radius:.7rem }
+}
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto }
+  *,*::before,*::after { animation:none!important; transition:none!important }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "@id":"https://www.easterndental.sg/#organization",
+      "name":"Eastern Dental Surgery",
+      "url":"https://www.easterndental.sg/",
+      "foundingDate":"1983",
+      "founder":[
+        {"@type":"Person","name":"Dr Chiam Tok Joon"},
+        {"@type":"Person","name":"Dr Chee Ai Guat"}
+      ],
+      "parentOrganization":{"@type":"Organization","name":"Quantum Healthcare","url":"https://www.quantumhealthcare.com.sg/"}
+    },
+    {
+      "@type":"Dentist",
+      "@id":"https://www.easterndental.sg/#jurong-east",
+      "name":"Eastern Dental Surgery — Jurong East",
+      "telephone":"+6565624146",
+      "parentOrganization":{"@id":"https://www.easterndental.sg/#organization"},
+      "address":{"@type":"PostalAddress","streetAddress":"303 Jurong East Street 32, #01-92","addressLocality":"Singapore","postalCode":"600303","addressCountry":"SG"}
+    },
+    {
+      "@type":"Dentist",
+      "@id":"https://www.easterndental.sg/#bukit-batok",
+      "name":"Eastern Dental Surgery — Bukit Batok",
+      "telephone":"+6565619780",
+      "parentOrganization":{"@id":"https://www.easterndental.sg/#organization"},
+      "address":{"@type":"PostalAddress","streetAddress":"213 Bukit Batok Street 21, #01-217","addressLocality":"Singapore","postalCode":"650213","addressCountry":"SG"}
+    },
+    {
+      "@type":"Dentist",
+      "@id":"https://www.easterndental.sg/#jurong-west",
+      "name":"Eastern Dental Surgery — Jurong West",
+      "telephone":"+6565674831",
+      "parentOrganization":{"@id":"https://www.easterndental.sg/#organization"},
+      "address":{"@type":"PostalAddress","streetAddress":"502 Jurong West Avenue 1, #01-813","addressLocality":"Singapore","postalCode":"640502","addressCountry":"SG"}
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+
+<header class="wrap site-header">
+  <a href="#main" class="brand" aria-label="Eastern Dental Surgery home">
+    <img width="203" height="90" alt="Eastern Dental Surgery — original logo"
+    src="data:image/webp;base64,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">
+  </a>
+  <button class="mobile-menu" id="menu-toggle" aria-controls="navigation" aria-expanded="true" hidden>Menu</button>
+  <nav id="navigation" aria-label="Main navigation">
+    <a href="#treatments">Treatments</a>
+    <a href="#our-story">Our story</a>
+    <a href="#team">Our dentists</a>
+    <a href="#clinics">Our clinics</a>
+    <a href="#clinics" class="button">Request a visit <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="wrap hero" aria-labelledby="hero-title">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Your neighbourhood dental practice · Since 1983</span>
+        <h1 id="hero-title">Caring for smiles.<br><em>Through generations.</em></h1>
+        <p class="lead">Family dental care in Jurong East, Bukit Batok and Jurong West — from routine check-ups to restorative treatment and teeth straightening.</p>
+        <div class="actions">
+          <a class="button" href="#clinics">Find your clinic <span aria-hidden="true">↗</span></a>
+          <a class="button outline" href="#treatments">Explore treatments</a>
+        </div>
+        <p><small>Choose your clinic below to call or request an appointment.</small></p>
+      </div>
+      <figure class="hero-photo">
+        <img width="640" height="277" fetchpriority="high" alt="Parents smiling with their young daughter"
+        src="data:image/webp;base64,UklGRi4PAABXRUJQVlA4WAoAAAAQAAAAfwIAFAEAQUxQSDAAAAABF/D8/4iIQVHbRtJcS2GhLX9E81xH9H8C3onl8h//8R//8R//8R//8R///fTd3A5WUDgg2A4AANCSAJ0BKoACFQE+7Xa0U6mntawlErlasB2JZ27hYs6gJG1oQ56CJvS00QNPByOQscQlZjXBFebgGC7TyQek5e75sFlILjRZwygd4/vYzd/y0kmktqxT9r1GWc1BiENZQoB70rQPziOtOaMdbMqUxQJCZPskHHISQgcvweFO3r72lYqZwACciYX9FK/UlmCNPq1ZCBg5HM8gnG+EfbSdSxp54M0H/tgsIFmTyeRwZN5xVmOpBAHWU+nIGDkchSZcTldHp3hf2zsExnWAG4OQvrBgpJEbwi+baBKE8dHpfnD1l44M8s1xX23f+4TWGrIQYnR4zAF/PmDmMfMCCFTce4Jy14W+Gy0E9V4QS2MbO5ovQgmDsLu3/TspLSzrsS7DSOzDnJ9WypVWJAyiWPv6XWjO/LBCsjS/lutT4H6atWRvSQjOAMauwMrA9guQi/AfNYwB6sar0pZJ+E1h0dAnZAZ22CoVHIiWYGbnmHkVmbbYQ9okKHTo1iHJ5MtQ1LptPx08t1DvoechvroRHrZUcjlR2dhYkRIzVqyEBpatFNTmY4bA1ibSCwGC0i8q1jKYc41L5WYXyjHRLNvW1hobLP3et1byqw1xYRLfKyqj1P1sqb4Hyiu3RRnVB4NYwMOxAv9zvRyQpVHnlhwSGKKuTHCCquP7WDbHstLReP2GHOmy53tAMwLTGqxM5OxnZjBJciNJVdJqGDbIQMuJI2SJiAxQEJyOOSsIKs3BbDWLY7+WLCH0nbwnyHv0xWl02HHeZT9qtdtXcL+ae6vYxV8+nBYurrVkJjSaR2YcyNNVHqZ4dfajwpCMn3200wz+AtfQ3WHNzF+fXtSU/YMWDRrnGyUGJ4YRb8IJX7Y9aMsoJECCporpvgNrka2mP0BL1ZnI4wgquDlP1bK91BnfY5rxYnZL1wrdzTCbnzkklP1cgbrZHhe212p/hIVkbxhqtxUDudQereZ2Y3P3UmZdZ5P4uzUOZrc0EkIBvSYxSxUZ7Xp/GE81GzCeh71WWYwiVqyPe2vgmnzcd6mHQ6dRYVJKwzhJ5JMvC4y4IDE5wo27gh/aeYpXxUMzF8zRuNAWt+20eWTv4GVMGSkFrjoFYMzrIeuWVZfrnPy7qjt6Aw+E2Gc+oFD0Uwkq0IrvuME8z9bvoJjQD7J7Y9vVWqgshuJ6QfCzpU5ngDzmxRofopw7nFtnwgyn+5Q4SY7Yd25sjC96HUIw0qwMQPW0X4PwIY9uX/bRvOVUcnMXyXifUB68owgJ8P30sGgV9hw0K0Ojk67BV9WDFPcscOYXqlA/fd8SDThTfqdmi+kzb+t/HPZ/pKybHcxtFzcMqQyLhjjFBVl5SRMkOPbqBhUZ4Z2uo5XocVpqJSY7jo8j7dopRFnOiLYF4ZHE5QI/8krp5FEBhYrahduB/nijFz9q5CG6eKCb4YAJokyCCYwsvRUGHa5NihteGS2WBTozYN6lat3tRniVmROcK9gmqTBNzXXdaUgGToIddnt5VwW43V29axp8VKNiNNrWK31y/bEia8rz5PJpbMwPDSgrxypgpz/kmumrYcS84MBan9n2lpMV5PAX9AAA/vefGwj0+a64cg5n0s5to6Cp1eaD8ypSGyJSusAXNj1YBXzLPpTD0qAJAyQTPMy5BDg4+cJcmHpUASBiBlDo9m4oycYr7FRZrMQ63PwH9hQIB22D8Io1ZjMsuRv23YiTAgHmQGYh1tCveh33cvi/9KnbDY1BTy/xfeyIiH+h2E1T2WvctaOgOsfoj4BFcCdVZr+l7kQ4kiuvB+bbdFiHcwsYroQABkNBh4s9odICcKZpNUvTsCi8QwC7A/0LwKrceObn13sIwgV6onKsCavVvMewJYtHTC5BD19GnYiYcchtrBit3uclhT0gAF2W/X/7KffKYMLtwcjaBQ5Q/LFinLSyPl3fOLf0EA8rPilVDs+JDf8SNDO+yh5YR6BBRF+Oa3EAPjCSzrV9NV800Kwo4wotvGgsgwnBVhZJyylFekKD5cFm4n3BpR3X0Fcw3CmsHJPC2b6/u31xFbO+UIFfwd7yhzoAkL5INFe/i6HnT5bXmWPab3OtOSQJ24AO6Qhl3K4KT7smepcwkcWP8ZN71qIt0uJ8NMTHmge426mBvPPsoH7E5Vi9IO/0ySPYU0/kiHCU34P40ZqppU4inEUgbiWDx/GEA49iKMM8mpwFnFlBt/hyfhIoQ/34hZdQzW5IvD6IYBW3PMzotSAAC80BSgKbgAApAIfUgGPCTHybIlRaatcinxUcF6c8d0C9LnO/rG64TrjKNk3chj13KbSn0MM18Kp+m/pD3paVtjq3h4BdJwepCQldlRCkqMlP3p3Lzd07Jy5g226TSW1yPpPopv+CMgAenw8YKzBTpGo6XSFGrCt1s2Vy+oSScFFiOi6cXEios53q+86MurkoASwE2uZnGLcdUZ9KbFyt6xZbzAuVHUCJIae8l3CdOFfwkeYs2ufRXLGnVQJAbn4jxHk3hrOCy/XOVWJMOrAaBT6RheWepIPpTNPYrvybAIQhR6QtdiyAAMtX8s0Llh+k1t94zXuFpflTNPDZPSsYT7ApIsq/w6MSyQ57AiTqKwDGJ7FxOwPUPbcdPrNnoOTMa98T+knxrmQE65cUJt/KVz3VQOWJZZ8Fw7mvqSPrgK91THCLu8LffqszGixM6QPFNcCoIBF1cTXIY7YUjRZSQB4b7ixNomGhblkKgu4x7LApANBYB2Wv8FXrSfYvoi3WULyXL9CePYhVyAVHv/PfVbA9Bv1IgtP/ykNvux4uoqT48NyFVUk0Hvn2ZxsgmRGu2DIUP4+sxwU45HJgKdtIY6H4o0XtxkR0TurGSGnrwiOuj/9613yGewNMKosN5cCdCn/u66hsrq64A1qQ1YEliosg3uyPVdqcQqG/sQdochKg8vOuf996pPPux1qETSr1KQaDuOBo9vFOQBGXEsgAAiEX0mmjnhuuPZfDR3j6jozd6tjiVixmUf9bo3NpopTP5Q+IZqNLl5uYdVWsrnk9ZlACH50/1+uHFHpHm4moUIHsMoh5mXwksvtSV10wMfOvxZrjJOHJVapSW5U0I1YyoS5A79Iw4SWtNZXWWNJ6dNOh9NAUlmGd/zSpnWN6cFuFg7ZPB5ttIs2TTQndCIODftbjfOgF1q46zbt9cJkv8+B4UMAdw95ckoq/Huwawez9sCRTU2d5I0LjpdweogMSQH5N8xu0Kx9JF0CXOLTt4ElVgoOnGm6uIhcqMKNlDdgJuXyoZbGt/8sL+dD6H39qnJwMd4qS931vHsimvBl3bWdkjcrKaKOozd6VCKol1pzxr4NjdZKAv4rLsMBdTVhBhzaNH3MTu/p28opIPNh9zlkpopgfE8lm3F8yQC50+Fxn4gRNr5edOMqkSNrExiEKSSvDIVYH24AJnv0P2D/UhHRcoCG/XcHY9cbA14939foAA+Ge1WygmtYIcBKbfwDgfLKxdQF8C1ZJn38D/rPwkhsu8BM/2Avg5uuaeW/HGeQDJRBIC9cPNWawBNvjLCIyrj+a1e0GI3pPUOrs2Yv1yweVBdC/ySH25o8tsUEDiuye9EXpFkqXwc7/gxU3T43wqG380P2U1dI8X0gtAxPE+GrzSe90m4izmwMsw1DVg720BID45ePUN+QQ76cLel1bwtS4TBVGZCrDR5m5tOAJnB+jyDyabpKJxEMMTAMjSRxX9c7Ajhsb5Sef3nfM89WuQwSoKFT/cOYezC7nOSBQRln8/alsLBMHEwsNWmLoz82SazHm/8ffiwFY4MxjTzdZxpvoCqyu/J/KGkEwg5vkoemdpkTHzqx8aAcBNWGa1hPjKX+U7H3cy1g5SYCbPoqrnwRcN68RWY1iE5w0U/DiVCElD4nQ/2TJ9kQhgKyeDt1OhDBAAPbDybSolmExBC9IhDy9DiYOVz/W0dAnWfAr6qSgYya5VtrxgwADxF1bnt9+FN8zjBCHROpNXpj5EHb65/ldlraJoUEFGCh7IQG2diQQWbQzuIANOXj76uJfeP1OIpWtf2TCAa9LK1b3W1BruVKIbbyj58qX0FPGqMAy7yqZQ7tTUL3LHr7x8k8i509FtosqSpFrVNQig36qnjbaOowP8lmON8wEvbPUrmWkESo4Ppk2cZNNawb411OeFD9Wgpx7SKHC5hkMBp7GgvY5g1Q50i5P9ZnSmUmGhxBTLibuInIJsNGSnEBpT49fWP9gAEKqiO2WFhPjkNReg93VDzAKmgeiUTr2XnO611ylC4azLHpq308UNeuI2/hceyZylKIiBypC1NwJGqdFSAnU0dKdVFmzEPWp0q+Nmpmm3o9OmNTV754UK0uYB2U4JwBgAfRBT8/ZEde08KlCpw5h79mF/9pNe4pp9QSMa7GiCVPqA4efVEah/sgBpjbKEKdlKgdjtwWyWba5nELJnfPneY+6ebUNlTwjEbkIMOEhONxlc8e6WXbnYtVpiYL8Re+WDRpTRKqkxTJQRnwPo161It73ZD45vacX/YMAc4JOBvLOTeawwWMoiUGVfgEyZu2kSo1xLe4EiaNvd5RNN4ji5milU3iKZD8sHs6losbJ3hcJfkBVNqyR8qYdCQoel6zWj9RC9Jz0vJYPIpibVRiiwB02DST5lYvv5OYyDBEmhMpPe1vNI/2355+sD7VyoRd1tAV7EfuCdfZ5WBV2Hq0TkcUZeHDvqsFkE88JvHgB24RDWqnOmFo+BcRwoBaJJyfrUx4iBZx8vkfUk1IoDukiOzaoUqz024PFhojWXOB2czMeOWSDxESmtsVmRYcNGgyN2O50wkGvxWSlaKmmKtg0hv6VndSzX6+cMroww5qB7NAYvEl44XKvwlcPC1+GObhbbDsZxe1mHyYUgIl1HwJTB2j1KmQDxkWU+lpKQ4S8+UYqdFu9dwUjM5ac8gGjZeSBCKOURPBCMMN7Ewi3PtyK3aK0c9Bkt60QjsK842b2Bi4X+bHZCbd205NcEgAe48iNEFnq3pgzTIcE53lfRd8l2wHNcCwYp9cA1M4zgsJh1syvNDsDQMZsDS5cbppX54kYXo+P8W3Et0UAAAAA">
+        <figcaption class="hero-note"><strong>A familiar name.</strong>Dental care in three western Singapore neighbourhoods.</figcaption>
+      </figure>
+    </div>
+    <div class="hero-foot">
+      <b>Three clinics. One familiar name.</b>
+      <div class="neighbourhoods"><span>Jurong East</span><span>Bukit Batok</span><span>Jurong West</span></div>
+    </div>
+  </section>
+
+  <section id="treatments" class="section wrap" aria-labelledby="treatments-title">
+    <div class="section-heading">
+      <div><span class="eyebrow">Care for different stages of life</span><h2 id="treatments-title">What brings<br>you in today?</h2></div>
+      <p>Explore our treatments, then speak with your chosen clinic. Your dentist can assess your needs and discuss suitable options.</p>
+    </div>
+
+    <!-- Exactly six custom SVG icons, arranged in two rows of three. -->
+    <div class="routes" aria-label="Explore six treatment areas">
+      <a class="route" href="#checkups">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 11c-8 0-11 7-8 16l5 22c1 5 5 5 7 0l4-12c1-4 7-4 8 0l4 12c2 5 6 5 7 0l5-22c3-9 0-16-8-16-5 0-8 3-12 3s-7-3-12-3Z"/><path d="m24 25 5 5 11-11"/></svg>
+        <span>Check-ups<small>Everyday oral health</small></span>
+      </a>
+      <a class="route" href="#straightening">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M9 18q23-12 46 0v24q-23 12-46 0Z"/><path d="M24 14v34M40 14v34M9 31h46"/><rect x="19" y="26" width="10" height="10" rx="2"/><rect x="35" y="26" width="10" height="10" rx="2"/></svg>
+        <span>Straightening<small>Braces and Invisalign</small></span>
+      </a>
+      <a class="route" href="#wisdom">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 43q20 16 40 0M17 39l-4-16c-2-8 3-13 9-12 4 0 6 3 10 3s6-3 10-3c6-1 11 4 9 12l-4 16M24 39l5-11q3-4 6 0l5 11"/><path d="M32 7V2m-5 5 5 5 5-5"/></svg>
+        <span>Wisdom teeth<small>Assessment and surgery</small></span>
+      </a>
+      <a class="route" href="#restorative">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 13c-8 0-9 8-6 16l6 21c2 5 6 4 7-1l3-11c1-4 7-4 8 0l3 11c1 5 5 6 7 1l6-21c3-8 2-16-6-16"/><path d="m18 13 3 11h22l3-11-9 5-5-10-5 10Z"/></svg>
+        <span>Restorations<small>Repair and replacement</small></span>
+      </a>
+      <a class="route" href="#gums">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 40q8-12 16-2t16 0q8-10 16 2v12H8Z"/><path d="m20 37-4-15c-2-8 3-13 9-10l7 2 7-2c6-3 11 2 9 10l-4 15M27 35l5-10 5 10"/><path d="M7 22h5m40 0h5"/></svg>
+        <span>Gum care<small>Treatment and surgery</small></span>
+      </a>
+      <a class="route" href="#implants">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M19 25V15c0-8 8-9 13-6 5-3 13-2 13 6v10ZM26 25v26l6 6 6-6V25M23 32h18M23 40h18M25 48h14M9 29q7-5 12 0m22 0q5-5 12 0"/></svg>
+        <span>Implants<small>Replacing missing teeth</small></span>
+      </a>
+    </div>
+
+    <div class="treatment-list">
+      <details id="checkups">
+        <summary>Routine check-ups, scaling & polishing</summary>
+        <p>Regular reviews help your dentist assess your teeth and gums. Scaling and polishing are part of the routine care offered by Eastern Dental Surgery.<br><a href="#clinics">Ask your clinic about a check-up</a></p>
+      </details>
+      <details id="straightening">
+        <summary>Braces & Invisalign</summary>
+        <p>The practice offers braces and Invisalign for teeth straightening. Speak with the clinic about an assessment and the options that may suit you.<br><a href="#clinics">Enquire about straightening</a></p>
+      </details>
+      <details id="wisdom">
+        <summary>Wisdom tooth surgery</summary>
+        <p>Arrange an assessment of your wisdom teeth and discuss whether treatment is needed. The practice offers wisdom tooth surgery.<br><a href="#clinics">Request an assessment</a></p>
+      </details>
+      <details id="restorative">
+        <summary>Restorative dentistry</summary>
+        <p>Treatments listed by the practice include fillings, crowns, bridges, dentures and root canals. Your dentist can discuss options for damaged or missing teeth.<br><a href="#clinics">Discuss restorative care</a></p>
+      </details>
+      <details id="gums">
+        <summary>Gum treatment & surgery</summary>
+        <p>The practice provides gum treatment and surgery. If you have concerns about your gums, contact a clinic to arrange a dental assessment.<br><a href="#clinics">Ask about gum care</a></p>
+      </details>
+      <details id="implants">
+        <summary>Bone grafting & dental implants</summary>
+        <p>Bone grafting and dental implants are among the practice’s services. An assessment is needed to discuss suitability and treatment planning.<br><a href="#clinics">Enquire about implants</a></p>
+      </details>
+    </div>
+  </section>
+
+  <section id="our-story" class="section history" aria-labelledby="story-title">
+    <div class="wrap history-grid">
+      <div>
+        <span class="eyebrow">Rooted in the neighbourhood</span>
+        <h2 id="story-title">A practice with<br>a local history.</h2>
+        <span class="since">1983</span>
+        <p class="lead">Our story began in Jurong East, founded by Dr Chiam Tok Joon and Dr Chee Ai Guat.</p>
+        <p>Today, Eastern Dental Surgery serves patients across three neighbourhood clinics and is a member of Quantum Healthcare.</p>
+      </div>
+      <ol class="timeline">
+        <li><time datetime="1983">1983</time><div><h3>Jurong East</h3><p>The first clinic opened, sharing its premises with a medical clinic.</p></div></li>
+        <li><time datetime="1985">1985</time><div><h3>Bukit Batok</h3><p>The practice expanded to Bukit Batok. Dr Peh Gek Yock joined the team.</p></div></li>
+        <li><time datetime="1987">1987</time><div><h3>Jurong West</h3><p>A third clinic gave patients another neighbourhood location to visit.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="clinics" class="section clinics" aria-labelledby="clinics-title">
+    <div class="wrap">
+      <div class="clinic-intro">
+        <span class="eyebrow">Your next visit starts here</span>
+        <h2 id="clinics-title">Choose the clinic<br>that works for you.</h2>
+        <p class="lead">Find the address, opening hours and direct contact details for each location. Request an appointment with your chosen clinic through WhatsApp.</p>
+      </div>
+
+      <div class="clinic-picker" id="quick-contact" hidden>
+        <label for="preferred-clinic">Quick contact clinic</label>
+        <select id="preferred-clinic">
+          <option value="east">Jurong East</option>
+          <option value="batok">Bukit Batok</option>
+          <option value="west">Jurong West</option>
+        </select>
+        <span class="picker-help" id="selected-clinic" role="status">Quick contact is set to Jurong East.</span>
+      </div>
+
+      <div class="clinic-grid">
+        <article class="clinic" id="clinic-east">
+          <h3>Jurong East</h3>
+          <address>303 Jurong East Street 32<br>#01-92<br>Singapore 600303</address>
+          <a class="phone" href="tel:+6565624146">6562 4146</a>
+          <ul class="hours" aria-label="Jurong East opening hours">
+            <li><span>Mon–Fri</span><span>8:30am–4:30pm</span></li>
+            <li><span>Saturday</span><span>8:30am–12:30pm</span></li>
+            <li><span>Sun & public holidays</span><span>Closed</span></li>
+          </ul>
+          <div class="actions">
+            <a class="button" href="https://wa.me/6597624146?text=Hello%20Eastern%20Dental%20Surgery%20Jurong%20East%2C%20I%20would%20like%20to%20request%20an%20appointment.">Request via WhatsApp</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=303%20Jurong%20East%20Street%2032%20Singapore%20600303" target="_blank" rel="noopener">Directions <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a>
+          </div>
+        </article>
+
+        <article class="clinic" id="clinic-batok">
+          <h3>Bukit Batok</h3>
+          <address>213 Bukit Batok Street 21<br>#01-217<br>Singapore 650213</address>
+          <a class="phone" href="tel:+6565619780">6561 9780</a>
+          <ul class="hours" aria-label="Bukit Batok opening hours">
+            <li><span>Mon, Wed–Fri</span><span>8:30am–4:30pm</span></li>
+            <li><span>Tuesday</span><span>8:30am–7pm</span></li>
+            <li><span>Saturday</span><span>8:30am–3pm</span></li>
+            <li><span>Sun & public holidays</span><span>Closed</span></li>
+          </ul>
+          <div class="actions">
+            <a class="button" href="https://wa.me/6597419780?text=Hello%20Eastern%20Dental%20Surgery%20Bukit%20Batok%2C%20I%20would%20like%20to%20request%20an%20appointment.">Request via WhatsApp</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=213%20Bukit%20Batok%20Street%2021%20Singapore%20650213" target="_blank" rel="noopener">Directions <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a>
+          </div>
+        </article>
+
+        <article class="clinic" id="clinic-west">
+          <h3>Jurong West</h3>
+          <address>502 Jurong West Avenue 1<br>#01-813<br>Singapore 640502</address>
+          <a class="phone" href="tel:+6565674831">6567 4831</a>
+          <ul class="hours" aria-label="Jurong West opening hours">
+            <li><span>Mon, Tue, Thu, Fri</span><span>8:30am–4:30pm</span></li>
+            <li><span>Wednesday</span><span>8:30am–7pm</span></li>
+            <li><span>Saturday</span><span>8:30am–12:30pm</span></li>
+            <li><span>Sun & public holidays</span><span>Closed</span></li>
+          </ul>
+          <div class="actions">
+            <a class="button" href="https://wa.me/6597974831?text=Hello%20Eastern%20Dental%20Surgery%20Jurong%20West%2C%20I%20would%20like%20to%20request%20an%20appointment.">Request via WhatsApp</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=502%20Jurong%20West%20Avenue%201%20Singapore%20640502" target="_blank" rel="noopener">Directions <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a>
+          </div>
+        </article>
+      </div>
+
+      <p class="request-note">A WhatsApp message is an appointment request, not a confirmed booking. Please wait for the clinic to confirm availability. For the existing online request form, the practice states that staff will contact you within three working days. Call your chosen clinic if you need to speak with the team.</p>
+      <p><a href="https://www.easterndental.sg/home-1">Prefer the online appointment request form?</a></p>
+    </div>
+  </section>
+
+  <section id="team" class="section wrap" aria-labelledby="team-title">
+    <div class="team-grid">
+      <div class="team-copy">
+        <span class="eyebrow">Meet the practice</span>
+        <h2 id="team-title">People behind<br>your dental care.</h2>
+        <p>From the founding dentists to the wider team, meet the dentists listed by Eastern Dental Surgery.</p>
+        <p>Contact your clinic to ask about a particular dentist’s availability.</p>
+        <div class="actions"><a class="button outline" href="#clinics">Speak with a clinic</a></div>
+      </div>
+      <ul class="dentists">
+        <li><strong>Dr Chiam Tok Joon</strong><span>Founder · Dentist</span></li>
+        <li><strong>Dr Chee Ai Guat</strong><span>Founder · Dentist</span></li>
+        <li><strong>Dr Peh Gek Yock</strong><span>Dentist</span></li>
+        <li><strong>Dr Kenji Chin</strong><span>Dentist</span></li>
+        <li><strong>Dr Ren Jiamin</strong><span>Dentist</span></li>
+        <li><strong>Dr Belinda Lee</strong><span>Dentist</span></li>
+        <li><strong>Dr Khong Jin Sun</strong><span>Dentist</span></li>
+      </ul>
+    </div>
+    <div class="visit-strip">
+      <div><h3>Dental technology</h3><p>The practice lists intraoral cameras, digital X-rays and CT scanning among its facilities. Ask your clinic about the facilities relevant to your visit.</p></div>
+      <div><h3>Questions about payment schemes?</h3><p>The existing website displays CHAS, MediSave, Baby Bonus, Merdeka Generation and Pioneer Generation logos. Please confirm eligibility, applicable treatment and payment arrangements with your clinic.</p></div>
+    </div>
+  </section>
+
+  <section class="section faq" aria-labelledby="faq-title">
+    <div class="wrap faq-grid">
+      <div><span class="eyebrow">Before your visit</span><h2 id="faq-title">A little clarity<br>before you call.</h2></div>
+      <div>
+        <details><summary>Where are the clinics?</summary><p>Our three locations are at Jurong East Street 32, Bukit Batok Street 21 and Jurong West Avenue 1. Full addresses, opening hours and directions are listed in the <a href="#clinics">clinic section</a>.</p></details>
+        <details><summary>How do I request an appointment?</summary><p>Call or WhatsApp your chosen clinic using the details above. You can also use the <a href="https://www.easterndental.sg/home-1">existing online request form</a>. Your appointment is confirmed only when the clinic confirms the date and time.</p></details>
+        <details><summary>Can I check treatment fees before visiting?</summary><p>Please contact your clinic about consultation fees, treatment estimates and payment options. No unverified prices or subsidy amounts are quoted on this page.</p></details>
+        <details><summary>Can I request a particular dentist?</summary><p>Contact the clinic and mention the dentist you would like to see. The team can advise on availability before confirming your appointment.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap final-cta" aria-labelledby="next-title">
+    <div class="final-cta-inner">
+      <div><span class="eyebrow">Let’s plan your next visit</span><h2 id="next-title">Your neighbourhood.<br>Your next smile.</h2><p>Choose a clinic, speak with the team and take the next step in your dental care.</p></div>
+      <a class="button" href="#clinics">Choose your clinic <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap site-footer">
+  <div class="footer-top">
+    <div><strong>Eastern Dental Surgery</strong><p>Serving Jurong East, Bukit Batok<br>and Jurong West.</p></div>
+    <div class="footer-links">
+      <a href="#treatments">Treatments</a>
+      <a href="#team">Our dentists</a>
+      <a href="#clinics">Clinic contacts</a>
+      <a href="https://www.easterndental.sg/blank">PDPA notice</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Eastern Dental Surgery</span>
+    <a href="https://www.quantumhealthcare.com.sg/">Member of Quantum Healthcare</a>
+  </div>
+</footer>
+
+<!-- Exactly two persistent mobile conversion actions. -->
+<div class="mobile-bar" aria-label="Quick clinic contact">
+  <a class="button outline" id="mobile-call" href="tel:+6565624146" aria-label="Call Jurong East clinic at 6562 4146">Call clinic</a>
+  <a class="button" href="#clinics">Request a visit</a>
+</div>
+
+<style>
+/* Accessible supporting text, kept in the reading order. */
+.sr-only {
+  position:absolute; width:1px; height:1px; padding:0;
+  margin:-1px; overflow:hidden; clip:rect(0,0,0,0);
+  white-space:nowrap; border:0;
+}
+</style>
+<script>
+(() => {
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("navigation");
+  const narrow = window.matchMedia("(max-width:760px)");
+
+  toggle.hidden = false;
+
+  function syncMenu() {
+    nav.hidden = narrow.matches;
+    toggle.setAttribute("aria-expanded", String(!nav.hidden));
+  }
+
+  toggle.addEventListener("click", () => {
+    nav.hidden = !nav.hidden;
+    toggle.setAttribute("aria-expanded", String(!nav.hidden));
+  });
+
+  nav.addEventListener("click", event => {
+    if (event.target.closest("a") && narrow.matches) {
+      nav.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  nav.addEventListener("keydown", event => {
+    if (event.key === "Escape" && narrow.matches) {
+      nav.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.focus();
+    }
+  });
+
+  narrow.addEventListener("change", syncMenu);
+  syncMenu();
+
+  const clinics = {
+    east: { name:"Jurong East", phone:"+6565624146", readable:"6562 4146" },
+    batok: { name:"Bukit Batok", phone:"+6565619780", readable:"6561 9780" },
+    west: { name:"Jurong West", phone:"+6565674831", readable:"6567 4831" }
+  };
+
+  document.getElementById("quick-contact").hidden = false;
+  document.getElementById("preferred-clinic").addEventListener("change", event => {
+    const clinic = clinics[event.target.value];
+    const call = document.getElementById("mobile-call");
+    call.href = "tel:" + clinic.phone;
+    call.setAttribute("aria-label", "Call " + clinic.name + " clinic at " + clinic.readable);
+    document.getElementById("selected-clinic").textContent =
+      "Quick contact is set to " + clinic.name + ".";
+  });
+
+  function openTreatmentFromHash() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const target = document.getElementById(id);
+    if (target && target.matches(".treatment-list details")) target.open = true;
+  }
+
+  document.querySelectorAll(".route").forEach(link => {
+    link.addEventListener("click", () => {
+      const target = document.getElementById(link.hash.slice(1));
+      if (target) target.open = true;
+    });
+  });
+
+  window.addEventListener("hashchange", openTreatmentFromHash);
+  openTreatmentFromHash();
+})();
+</script>
+</body>
+</html>
